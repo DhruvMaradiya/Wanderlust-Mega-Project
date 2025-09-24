@@ -1,22 +1,29 @@
 #!/bin/bash
-
-# Set the Instance ID and path to the .env file
-INSTANCE_ID="i-030da7d31a1dbbffc"
-
-# Retrieve the public IP address of the specified EC2 instance
-ipv4_address=$(aws ec2 describe-instances --instance-ids $INSTANCE_ID --query 'Reservations[0].Instances[0].PublicIpAddress' --output text)
-
-# Path to the .env file
+# ----------- config -------------
+INSTANCE_NAME="gke-wanderlust-default-pool-47fd410a-d66z"   # VM name (never changes)
+ZONE="us-central1-a"            # zone you created it in
 file_to_find="../frontend/.env.docker"
+# --------------------------------
 
-# Check the current VITE_API_PATH in the .env file
-current_url=$(cat $file_to_find)
+# get current external IPv4 (empty if VM is stopped)
+ipv4_address=$(gcloud compute instances describe "$INSTANCE_NAME" \
+               --zone="$ZONE" \
+               --format="value(networkInterfaces[0].accessConfigs[0].natIP)")
 
-# Update the .env file if the IP address has changed
+if [[ -z "$ipv4_address" ]]; then
+  echo "ERROR: VM $INSTANCE_NAME has no external IP (stopped?)"
+  exit 1
+fi
+
+# same sed dance you already use
+current_url=$(cat "$file_to_find")
+
 if [[ "$current_url" != "VITE_API_PATH=\"http://${ipv4_address}:31100\"" ]]; then
-    if [ -f $file_to_find ]; then
-        sed -i -e "s|VITE_API_PATH.*|VITE_API_PATH=\"http://${ipv4_address}:31100\"|g" $file_to_find
-    else
-        echo "ERROR: File not found."
-    fi
+  if [[ -f "$file_to_find" ]]; then
+    sed -i "s|VITE_API_PATH.*|VITE_API_PATH=\"http://${ipv4_address}:31100\"|" "$file_to_find"
+    echo "Updated VITE_API_PATH -> http://${ipv4_address}:31100"
+  else
+    echo "ERROR: $file_to_find not found."
+    exit 1
+  fi
 fi
