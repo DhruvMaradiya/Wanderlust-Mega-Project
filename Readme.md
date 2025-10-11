@@ -4,12 +4,19 @@
 
 [![Wanderlust Preview](https://github.com/krishnaacharyaa/wanderlust/assets/116620586/17ba9da6-225f-481d-87c0-5d5a010a9538)](https://github.com/krishnaacharyaa/wanderlust)
 
+[▶ Watch demo video](https://drive.google.com/file/d/1g93SANwB9BG3YUoPeRS2IhqSuk_kURuJ/view?usp=sharing)
+
+
+<img width="1451" height="720" alt="Screenshot from 2025-10-11 17-44-49" src="https://github.com/user-attachments/assets/863bb4e9-4e05-4bf2-9290-ed5b77918717" />
+
+<img width="1241" height="759" alt="Screenshot from 2025-10-11 17-46-54" src="https://github.com/user-attachments/assets/c3bfab93-4e75-4696-bef0-1c31f9709bde" />
+
+
+
 ## 🌍 Project Origin & Our Twist
 
 - **Original App**: Forked from [`krishnaacharyaa/wanderlust`](https://github.com/krishnaacharyaa/wanderlust) — a standard MERN stack travel blog (MongoDB, Express, React, Node.js + Redis).
 - **Our Focus**: **Zero changes to the application code**. All effort was invested in building a **production-grade DevSecOps and GitOps pipeline** on **Google Cloud Platform (GCP)**.
-- **Cloud Choice**: While the reference project uses **AWS EKS**, this implementation is **100% GCP-native**, using **GKE**, **Compute Engine**, and **Cloud IAM**.
-
 ---
 
 ## 🚀 What We Built
@@ -258,13 +265,27 @@ gcloud compute firewall-rules delete allow-nodeport --quiet
 
 ## 📸 Screenshots
 
-- Green Jenkins pipeline
+- workloads
+<img width="1920" height="1080" alt="Screenshot from 2025-09-25 10-46-58" src="https://github.com/user-attachments/assets/07c16848-b4d6-4ae9-8d87-4e93b75aff4a" />
+
+- Jenkins pipeline
+<img width="1920" height="1080" alt="Screenshot from 2025-09-25 10-47-07" src="https://github.com/user-attachments/assets/24e97600-9476-4d2b-9e30-0a3bbffa9258" />
+
+- dockerhub
+<img width="1920" height="1080" alt="Screenshot from 2025-09-25 10-47-47" src="https://github.com/user-attachments/assets/f4f34f5e-f940-45bd-8a60-5ee994974baa" />
 
 - ArgoCD application sync status
+<img width="1920" height="1080" alt="Screenshot from 2025-09-25 10-48-16" src="https://github.com/user-attachments/assets/0b8414e6-9f8d-4ee7-86e5-27ab919f7324" />
 
 - Grafana dashboard
+<img width="1920" height="1080" alt="Screenshot from 2025-09-25 10-49-52" src="https://github.com/user-attachments/assets/f78bd89c-83b1-47a6-abb0-f2d808d89842" />
 
 - Wanderlust app running in browser
+<img width="1920" height="1080" alt="Screenshot from 2025-09-25 10-46-47" src="https://github.com/user-attachments/assets/59f4b29a-4bf0-4fc8-84d4-15b5d240dbf9" />
+
+- success email after pipeline deployment
+<img width="1920" height="1080" alt="Screenshot from 2025-09-25 10-50-15" src="https://github.com/user-attachments/assets/1ced4a61-2570-4304-a780-5bb71d06db68" />
+
 
 ---
 
