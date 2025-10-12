@@ -4,7 +4,7 @@
 
 [![Wanderlust Preview](https://github.com/krishnaacharyaa/wanderlust/assets/116620586/17ba9da6-225f-481d-87c0-5d5a010a9538)](https://github.com/krishnaacharyaa/wanderlust)
 
-[▶ Watch demo video](https://drive.google.com/file/d/1g93SANwB9BG3YUoPeRS2IhqSuk_kURuJ/view?usp=sharing)
+# [▶ Watch demo video](https://drive.google.com/file/d/1g93SANwB9BG3YUoPeRS2IhqSuk_kURuJ/view?usp=sharing)
 
 
 <img width="1451" height="720" alt="Screenshot from 2025-10-11 17-44-49" src="https://github.com/user-attachments/assets/863bb4e9-4e05-4bf2-9290-ed5b77918717" />
